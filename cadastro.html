@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão Equinos | Cadastrar Animal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Barra de Navegação -->
+    <nav>
+        <div class="logo">
+            <img src="image/gestãoequinos_logo.png" alt="Logo EquiGest">
+            <h1>Gestão<span>Equinos</span></h1>
+        </div>
+        <div class="nav-links">
+            <!-- Substitua o link "Voltar" na barra de navegação por: -->
+<a href="index.html" class="cta-button">Página Inicial</a>
+        </div>
+    </nav>
+
+    <!-- Container Principal -->
+    <main class="cadastro-container">
+        <h2>Cadastrar Animal</h2>
+        
+        <!-- Opções: Individual ou Lote -->
+        <div class="opcoes-cadastro">
+            <button id="btn-individual" class="active">Cadastro Individual</button>
+            <button id="btn-lote">Cadastro em Lote (Planilha)</button>
+        </div>
+
+        <!-- Formulário Individual (visível por padrão) -->
+        <form id="form-individual" class="form-cadastro">
+            <!-- Seção 1: Identificação -->
+            <fieldset>
+                <legend>Identificação</legend>
+                <div class="form-group">
+                    <label for="nome">Nome*</label>
+                    <input type="text" id="nome" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="registro">Registro</label>
+                        <input type="text" id="registro">
+                    </div>
+                    <div class="form-group">
+                        <label for="microchip">Microchip</label>
+                        <input type="text" id="microchip">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="raca">Raça*</label>
+                        <input type="text" id="raca" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="sexo">Sexo*</label>
+                        <select id="sexo" required>
+                            <option value="">Selecione</option>
+                            <option value="macho">Macho</option>
+                            <option value="femea">Fêmea</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="nascimento">Data de Nascimento</label>
+                    <input type="date" id="nascimento">
+                </div>
+                <div class="form-group">
+                    <label for="pelagem">Pelagem</label>
+                    <input type="text" id="pelagem" placeholder="Ex: Alazão, Tordilho">
+                </div>
+                <div class="form-group">
+                    <label for="sinais">Sinais Particulares</label>
+                    <textarea id="sinais" rows="2" placeholder="Manchas, cicatrizes..."></textarea>
+                </div>
+            </fieldset>
+
+            <!-- Seção 2: Saúde -->
+            <fieldset>
+                <legend>Saúde e Veterinária</legend>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="peso">Peso (kg)</label>
+                        <input type="number" id="peso" step="0.1">
+                    </div>
+                    <div class="form-group">
+                        <label for="altura">Altura (cm)</label>
+                        <input type="number" id="altura">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="vacinas">Histórico de Vacinas</label>
+                    <textarea id="vacinas" rows="3" placeholder="Tipo, data, próxima dose..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="condicoes">Condições Médicas</label>
+                    <textarea id="condicoes" rows="2" placeholder="Alergias, doenças crônicas..."></textarea>
+                </div>
+            </fieldset>
+
+            <!-- Seção 3: Alimentação -->
+            <fieldset>
+                <legend>Alimentação</legend>
+                <div class="form-group">
+                    <label for="dieta">Tipo de Dieta</label>
+                    <input type="text" id="dieta" placeholder="Ex: Ração + Feno">
+                </div>
+                <div class="form-group">
+                    <label for="suplementos">Suplementos</label>
+                    <input type="text" id="suplementos" placeholder="Ex: Vitamina E, Minerais">
+                </div>
+            </fieldset>
+
+            <!-- Botão de Envio -->
+            <button type="submit" class="cta-button">Salvar Animal</button>
+        </form>
+
+        <!-- Formulário em Lote (oculto por padrão) -->
+        <div id="form-lote" class="form-cadastro" style="display: none;">
+            <div class="upload-area">
+                <img src="images/icon-upload.svg" alt="Ícone de Upload">
+                <p>Arraste e solte sua planilha aqui ou <span>clique para buscar</span></p>
+                <input type="file" accept=".csv, .xlsx">
+            </div>
+            <div class="dicas-lote">
+                <h4>Dicas para o arquivo:</h4>
+                <ul>
+                    <li>Use colunas como: <code>Nome, Raça, Sexo, Nascimento</code></li>
+                    <li>Formato CSV ou Excel (XLSX)</li>
+                    <li>Limite: 100 animais por importação</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
